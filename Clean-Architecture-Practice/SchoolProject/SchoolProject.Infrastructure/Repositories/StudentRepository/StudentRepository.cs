@@ -18,6 +18,6 @@ public class StudentRepository : IStudentRepository
     }
     public async Task<List<Student>> GetStudentListAsync()
     {
-        return await _context.Students.ToListAsync();
+        return await _context.Students.Include(d=>d.Department).ToListAsync();
     }
 }
