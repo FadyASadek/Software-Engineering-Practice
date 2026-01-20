@@ -10,4 +10,5 @@ namespace SchoolProject.Service;
 public interface IStudentService
 {
     Task<List<Student>> GetAllStudentAsync();
+    Task<Student?> GetStudentDyIdAsync(Guid id);
 }

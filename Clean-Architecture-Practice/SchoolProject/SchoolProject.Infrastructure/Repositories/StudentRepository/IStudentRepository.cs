@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SchoolProject.Infrastructure;
 
-public interface IStudentRepository
+public interface IStudentRepository : IGenericRepositoryAsync<Student>
 {
     Task<List<Student>> GetStudentListAsync();
 }

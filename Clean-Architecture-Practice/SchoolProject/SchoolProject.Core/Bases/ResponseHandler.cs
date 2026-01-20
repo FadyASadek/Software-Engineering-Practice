@@ -8,68 +8,65 @@ namespace SchoolProject.Core.Bases
 {
     public class ResponseHandler
     {
-
-        public ResponseHandler()
+        // 1. Delete
+        public Response<T> Deleted<T>(string message = "Deleted Successfully")
         {
-
-        }
-        public Response<T> Deleted<T>()
-        {
-            return new Response<T>()
+            return new Response<T>(message) // بنستخدم الكونستركتور المناسب
             {
                 StatusCode = System.Net.HttpStatusCode.OK,
-                Succeeded = true,
-                Message = "Deleted Successfully"
+                Succeeded = true
             };
         }
-        public Response<T> Success<T>(T entity, object Meta = null)
+
+        // 2. Success (Get Data)
+        // عدلت الرسالة عشان تبقى عامة، او تاخدها من الباراميتر
+        public Response<T> Success<T>(T entity, object? Meta = null, string message = "Operation Succeeded")
         {
-            return new Response<T>()
+            return new Response<T>(entity, message)
             {
-                Data = entity,
                 StatusCode = System.Net.HttpStatusCode.OK,
                 Succeeded = true,
-                Message = "Added Successfully",
                 Meta = Meta
             };
         }
-        public Response<T> Unauthorized<T>()
+
+        // 3. Unauthorized
+        public Response<T> Unauthorized<T>(string message = "UnAuthorized")
         {
-            return new Response<T>()
+            return new Response<T>(message)
             {
                 StatusCode = System.Net.HttpStatusCode.Unauthorized,
-                Succeeded = false,
-                Message = "UnAuthorized"
+                Succeeded = false
             };
         }
-        public Response<T> BadRequest<T>(string Message = null)
+
+        // 4. Bad Request
+        public Response<T> BadRequest<T>(string message = "Bad Request")
         {
-            return new Response<T>()
+            return new Response<T>(message)
             {
                 StatusCode = System.Net.HttpStatusCode.BadRequest,
-                Succeeded = false,
-                Message = Message == null ? "Bad Request" : Message
+                Succeeded = false
             };
         }
 
-        public Response<T> NotFound<T>(string message = null)
+        // 5. Not Found
+        public Response<T> NotFound<T>(string message = "Not Found")
         {
-            return new Response<T>()
+            return new Response<T>(message)
             {
                 StatusCode = System.Net.HttpStatusCode.NotFound,
-                Succeeded = false,
-                Message = message == null ? "Not Found" : message
+                Succeeded = false
             };
         }
 
-        public Response<T> Created<T>(T entity, object Meta = null)
+        // 6. Created (Add)
+        public Response<T> Created<T>(T entity, object? Meta = null, string message = "Added Successfully")
         {
-            return new Response<T>()
+            return new Response<T>(entity, message)
             {
-                Data = entity,
                 StatusCode = System.Net.HttpStatusCode.Created,
                 Succeeded = true,
-                Message = "Added Successfully",
                 Meta = Meta
             };
         }

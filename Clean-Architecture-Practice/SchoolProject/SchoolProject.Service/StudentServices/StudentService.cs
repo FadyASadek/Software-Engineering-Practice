@@ -1,4 +1,5 @@
-﻿using SchoolProject.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SchoolProject.Data;
 using SchoolProject.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -19,5 +20,12 @@ public class StudentService:IStudentService
     public async Task<List<Student>> GetAllStudentAsync()
     {
         return await _studentRepository.GetStudentListAsync();
+    }
+
+    public async Task<Student?> GetStudentDyIdAsync(Guid id)
+    {
+        return await _studentRepository.GetTableNoTracking()
+            .Include(d=>d.Department)
+            .Where(s=>s.id==id).FirstOrDefaultAsync();
     }
 }

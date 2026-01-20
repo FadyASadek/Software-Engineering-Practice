@@ -13,7 +13,9 @@ using System.Threading.Tasks;
 
 namespace SchoolProject.Core.Features.student.Queries.Handlers
 {
-    public class GetStudentListHandler : ResponseHandler, IRequestHandler<GetStudentListQuery,Response<List<GetStudentListDto>>>
+    public class GetStudentListHandler : ResponseHandler, 
+        IRequestHandler<GetStudentListQuery,Response<List<GetStudentDto>>>,
+        IRequestHandler<GetStudentByIdQuery,Response<GetStudentDto>>
     {
         private readonly IStudentService _studentService;
         private readonly IMapper _mapper;
@@ -24,11 +26,22 @@ namespace SchoolProject.Core.Features.student.Queries.Handlers
             _mapper = mapper;
         }
 
-        public async Task<Response<List<GetStudentListDto>>> Handle(GetStudentListQuery request, CancellationToken cancellationToken)
+        public async Task<Response<List<GetStudentDto>>> Handle(GetStudentListQuery request, CancellationToken cancellationToken)
         {
             var StudentList = await _studentService.GetAllStudentAsync();
-            var StudentListMapper = _mapper.Map<List<GetStudentListDto>>(StudentList);
-            return Success(StudentListMapper);
+            var StudentListMapper = _mapper.Map<List<GetStudentDto>>(StudentList);
+            return Success(StudentListMapper,"All Student");
+        }
+
+        public async Task<Response<GetStudentDto>> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
+        {
+            var student = await _studentService.GetStudentDyIdAsync(request.Id);
+            if (student == null)
+            {
+                return NotFound<GetStudentDto>();
+            }
+            var studentMapper = _mapper.Map<GetStudentDto>(student);
+            return Success(studentMapper);
         }
     }
 }
