@@ -3,6 +3,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine(Remove_String_Spaces.NoSpace("8 j 8   mBliB8g  imjB8B8  jl  B"));
+        Console.WriteLine(StringExt.ToAlternatingCase("HELLO WORLD"));
     }
 }
