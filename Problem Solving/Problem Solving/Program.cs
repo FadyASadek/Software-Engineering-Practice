@@ -3,6 +3,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine(StringExt.ToAlternatingCase("HELLO WORLD"));
+        Swapper S = new Swapper(new object[] { 1, 2 });
+        S.SwapValues();
     }
 }

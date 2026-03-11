@@ -10,5 +10,6 @@ public static class Is_the_string_uppercase
             if (char.IsLower(item))
                 return false;
         }
+        return true;
     }
 }
