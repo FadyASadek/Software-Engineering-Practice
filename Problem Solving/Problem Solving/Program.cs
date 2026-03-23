@@ -3,7 +3,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Swapper S = new Swapper(new object[] { 1, 2 });
-        S.SwapValues();
+        Console.WriteLine(What_is_between.Between(1, 4));
     }
 }
