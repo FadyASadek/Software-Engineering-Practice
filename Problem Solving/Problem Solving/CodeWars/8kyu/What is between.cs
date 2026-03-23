@@ -8,8 +8,10 @@ namespace Problem_Solving.CodeWars._8kyu
     {
         public static int[] Between(int a, int b)
         {
-            return Enumerable.Range(a, b - a + 1).ToArray();
-
+            List<int> result = new List<int>();
+            for (int i = a; i <= b ; i++)
+               result.Add(i);
+            return result.ToArray();    
         }
     }
 }

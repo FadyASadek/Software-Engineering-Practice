@@ -3,6 +3,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine(What_is_between.Between(1, 4));
+        Console.WriteLine(You_only_need_one.Check(new object[] { "what", "a", "great", "kata" }, "kat"));
     }
 }
