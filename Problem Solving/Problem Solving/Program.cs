@@ -3,6 +3,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine(You_only_need_one.Check(new object[] { "what", "a", "great", "kata" }, "kat"));
+        Console.WriteLine(Sum_of_differences_in_array.SumOfDifferences(new int[] {-17,17}));
     }
 }
