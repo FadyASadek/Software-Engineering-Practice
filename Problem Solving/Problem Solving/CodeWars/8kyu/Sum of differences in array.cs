@@ -22,7 +22,7 @@ namespace Problem_Solving.CodeWars._8kyu
                     {
                         break;
                     }
-                   num = newlist[i] - newlist[i + 1];
+                   num += newlist[i] - newlist[i + 1];
                 }
                 return num;
             }
