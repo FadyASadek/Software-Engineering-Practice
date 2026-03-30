@@ -3,6 +3,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine(Sum_of_differences_in_array.SumOfDifferences(new int[] {-17,17}));
+        Console.WriteLine(_101_Dalmatians___squash_the_bugs__not_the_dogs.HowManyDalmatians(101));
     }
 }
