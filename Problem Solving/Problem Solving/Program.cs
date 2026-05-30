@@ -3,6 +3,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine(_101_Dalmatians___squash_the_bugs__not_the_dogs.HowManyDalmatians(101));
+        Console.WriteLine(Reversed_sequence.ReverseSeq(5));
     }
 }
