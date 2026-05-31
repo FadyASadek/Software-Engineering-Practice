@@ -9,7 +9,7 @@ namespace Problem_Solving.CodeWars._8kyu
         public static int[] ReverseSeq(int n)
         {
             int[] ints = new int[n];
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < n; i++)
             {
                 ints[i] = n - i;
             }
