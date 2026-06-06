@@ -4,8 +4,7 @@ using System.Text;
 
 namespace Problem_Solving.CodeWars._8kyu
 {
-    public static class Get_the_mean_of_an_array
+    internal class The_falling_speed_of_petals
     {
-        public static int GetAverage(int[] marks) => (int)marks.Average();
     }
 }

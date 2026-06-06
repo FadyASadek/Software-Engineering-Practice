@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Problem_Solving.CodeWars._8kyu
 {
-    internal class Volume_of_a_Cuboid
+    public static class Volume_of_a_Cuboid
     {
+        public static double GetVolumeOfCuboid(double length, double width, double height)
+        {
+            return length * width * height;
+        }
     }
 }
