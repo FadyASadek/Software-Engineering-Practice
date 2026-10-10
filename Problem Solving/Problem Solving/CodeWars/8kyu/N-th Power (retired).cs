@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Problem_Solving.CodeWars._8kyu
 {
-    public static class The_falling_speed_of_petals
+    public static class N_th_Power__retired_
     {
-        public static double SakuraFall(double v) => v < 0 ? 0 : 400 / v;
-
+        public static double Index(int[] array, int n) => Math.Pow(array[n],n);
     }
 }

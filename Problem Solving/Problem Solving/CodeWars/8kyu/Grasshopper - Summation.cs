@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Problem_Solving.CodeWars._8kyu
 {
-    public static class The_falling_speed_of_petals
+    public static class Grasshopper___Summation
     {
-        public static double SakuraFall(double v) => v < 0 ? 0 : 400 / v;
-
+        public static int summation(int num) =>  num * (num + 1) / 2;
     }
 }

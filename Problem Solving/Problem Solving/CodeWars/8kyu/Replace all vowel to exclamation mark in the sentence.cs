@@ -13,9 +13,9 @@ namespace Problem_Solving.CodeWars._8kyu
                 if ("aeiouAEIOU".Contains(s[i]))
                 {
                     s = s.Remove(i,1).Insert(i, "!");
-
                 }
             }
+            return s;
         }
     }
 }
