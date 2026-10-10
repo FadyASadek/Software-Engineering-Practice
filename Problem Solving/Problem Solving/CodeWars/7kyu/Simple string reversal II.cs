@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Linq;
 namespace Problem_Solving.CodeWars._7kyu
 {
     public static class Simple_string_reversal_II
@@ -12,7 +12,8 @@ namespace Problem_Solving.CodeWars._7kyu
             string st = s[a..(b+1)];
             string x = new string(st.Reverse().ToArray());
             string s2 = s[..a] + s[(b + 1)..];
-            return s2 + x;
+            s2 = s2.Insert(a, x);
+            return s2 ;
         }
     }
 }
